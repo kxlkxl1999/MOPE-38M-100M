@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/runpy.py", line 146, in _get_module_details
+    return _get_module_details(pkg_main_name, error)
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/home/kangxinlai/PycharmProjects/MOPE/lm-evaluation-harness/lm_eval/__init__.py", line 1, in <module>
+    from .evaluator import evaluate, simple_evaluate
+  File "/home/kangxinlai/PycharmProjects/MOPE/lm-evaluation-harness/lm_eval/evaluator.py", line 12, in <module>
+    import lm_eval.api.metrics
+  File "/home/kangxinlai/PycharmProjects/MOPE/lm-evaluation-harness/lm_eval/api/metrics.py", line 10, in <module>
+    import sacrebleu
+ModuleNotFoundError: No module named 'sacrebleu'
+E0717 13:53:48.577000 75946 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 76013) of binary: /home/kangxinlai/anaconda3/envs/MOPE/bin/python3.10
+Traceback (most recent call last):
+  File "/home/kangxinlai/anaconda3/envs/MOPE/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/kangxinlai/anaconda3/envs/MOPE/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+lm_eval FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-07-17_13:53:48
+  host      : kangxinlai-MS-7C91
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 76013)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
